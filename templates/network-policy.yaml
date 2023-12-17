@@ -14,38 +14,18 @@ spec:
         - podSelector:
             matchLabels:
               app: web
-      ports:
-        - protocol: TCP
-            port: 80
-
-    - from:
-        - podSelector:
-            matchLabels:
-              app: web
-      ports:
-        - protocol: TCP
-            port: 80
         
       - to:
         - podSelector:
             matchLabels:
               app: app
-      ports:
-        - protocol: TCP
-            port: 80
 
     - from:
         - podSelector:
             matchLabels:
               app: app
-      ports:
-        - protocol: TCP
-            port: 80
           
       - to:
         - podSelector:
             matchLabels:
               app: db
-      ports:
-        - protocol: TCP
-            port: 80
