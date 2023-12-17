@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: web-app-db-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: web
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: app
+      ports:
+        - protocol: TCP
+          port: 8080
+    - from:
+        - podSelector:
+            matchLabels:
+              app: db
+      ports:
+        - protocol: TCP
+          port: 5432

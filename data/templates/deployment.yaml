@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-service
+  labels:
+    app: data
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: data
+  template:
+    metadata:
+      labels:
+        app: data
+    spec:
+      containers:
+        - name: data
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          args:
+            - --self-url={{ .Values.data.selfURL }}
+          ports:
+            - containerPort: {{ .Values.service.port }}

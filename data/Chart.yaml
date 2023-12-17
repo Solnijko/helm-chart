@@ -1,0 +1,4 @@
+apiVersion: v2
+name: data
+version: 1.0.0
+description: A Helm chart to deploy the data application to the data namespace

@@ -1,0 +1,9 @@
+replicaCount: 1
+image:
+  repository: nginx
+  tag: latest
+service:
+  port: 8080
+#URL to self
+app:
+  selfURL: http://app-service:8080

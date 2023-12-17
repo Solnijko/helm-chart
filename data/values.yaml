@@ -1,0 +1,9 @@
+replicaCount: 1
+image:
+  repository: nginx
+  tag: latest
+service:
+  port: 5432 #PostgreSQL port, for example
+#URL to self
+data:
+  selfURL: http://data-service:5432

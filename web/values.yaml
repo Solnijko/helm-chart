@@ -1,0 +1,14 @@
+replicaCount: 1
+image:
+  repository: nginx
+  tag: latest
+service:
+  port: 80
+ingress:
+  enabled: true
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - host: myapp.example.com
+      paths:
+        - /
