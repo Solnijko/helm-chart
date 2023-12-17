@@ -13,19 +13,17 @@ spec:
     - from:
         - podSelector:
             matchLabels:
-              app: web
-        
-      - to:
-        - podSelector:
-            matchLabels:
-              app: app
+              app: web     
+    - to:
+      - podSelector:
+          matchLabels:
+            app: app
 
     - from:
         - podSelector:
             matchLabels:
-              app: app
-          
-      - to:
-        - podSelector:
-            matchLabels:
-              app: db
+              app: app  
+    - to:
+      - podSelector:
+          matchLabels:
+            app: db
