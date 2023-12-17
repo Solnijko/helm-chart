@@ -17,4 +17,3 @@ spec:
                 name: {{ .Release.Name }}-web
                 port:
                   number: {{ .Values.service.port }}
-{{- end -}}
