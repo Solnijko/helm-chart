@@ -13,10 +13,10 @@ spec:
     - from:
         - podSelector:
             matchLabels:
-             app: web
+              app: web
       ports:
         - protocol: TCP
-          port: 80
+            port: 80
 
     - from:
         - podSelector:
@@ -24,7 +24,7 @@ spec:
               app: web
       ports:
         - protocol: TCP
-          port: 80
+            port: 80
         
       - to:
         - podSelector:
@@ -32,7 +32,7 @@ spec:
               app: app
       ports:
         - protocol: TCP
-          port: 80
+            port: 80
 
     - from:
         - podSelector:
@@ -40,7 +40,7 @@ spec:
               app: app
       ports:
         - protocol: TCP
-          port: 80
+            port: 80
           
       - to:
         - podSelector:
@@ -48,4 +48,4 @@ spec:
               app: db
       ports:
         - protocol: TCP
-          port: 80
+            port: 80
