@@ -1,0 +1,51 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: k8s-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: k8s-app
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: web
+        ports:
+          - protocol: TCP
+            port: 80
+
+    - from:
+        - podSelector:
+            matchLabels:
+              app: web
+        ports:
+          - protocol: TCP
+            port: 80
+        
+      - to:
+        - podSelector:
+            matchLabels:
+              app: app
+        ports:
+          - protocol: TCP
+            port: 80
+
+    - from:
+        - podSelector:
+            matchLabels:
+              app: app
+        ports:
+          - protocol: TCP
+            port: 80
+            
+      - to:
+        - podSelector:
+            matchLabels:
+              app: db
+        ports:
+          - protocol: TCP
+            port: 80
