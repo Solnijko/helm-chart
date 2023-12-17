@@ -4,9 +4,7 @@ kind: Ingress
 metadata:
   name: myapp-ingress
   annotations:
-    {{- range $key, $value := .Values.ingress.annotations }},
-    {{ $key }}: {{ $value }}
-    {{- end }}
+    {{- range $key, $value := .Values.ingress.annotations }}
 spec:
   rules:
     - host: {{ .Values.ingress.hosts }}
