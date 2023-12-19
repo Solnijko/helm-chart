@@ -3,7 +3,7 @@ image:
   repository: nginx
   tag: latest
 service:
-  name: {{ .Values.service.name }}
+  name: web-ingress
   port: 80
 ingress:
   enabled: true
