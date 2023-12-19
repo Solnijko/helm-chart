@@ -1,10 +1,12 @@
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: web-ingress
 spec:
   rules:
-    - host: {{ .Values.ingress.hosts }}
+    - host:
+        "{ .Values.ingress.hosts }": null
       http:
         paths:
           - path: /
@@ -13,4 +15,5 @@ spec:
               service:
                 name: web-service
                 port:
-                  number: {{ .Values.service.port }}
+                  number:
+                    "{ .Values.service.port }": null
