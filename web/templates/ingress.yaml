@@ -14,4 +14,5 @@ spec:
             backend:
               service:
                 name: web-service
-                port: {{ .Values.service.port }}
+                port:
+                  number: {{ .Values.service.port }}
