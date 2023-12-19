@@ -6,8 +6,6 @@ service:
   port: 80
 ingress:
   enabled: true
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
   hosts:
     - host: test.local
       paths:
