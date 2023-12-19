@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-service
+  name: web-deployment
   labels:
     app: web
 spec:
@@ -17,7 +17,5 @@ spec:
       containers:
         - name: web
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-          args:
-            - --self-url={{ .Values.ingress.hosts }}
           ports:
             - containerPort: {{ .Values.service.port }}

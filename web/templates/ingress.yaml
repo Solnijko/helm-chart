@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: myapp-ingress
+  name: web-ingress
   annotations:
     {{- range $key, $value := .Values.ingress.annotations }}
 spec:
@@ -13,5 +13,5 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ .Release.Name }}-web
+                name: web-service
                 port: {{ .Values.service.port }}

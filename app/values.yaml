@@ -4,6 +4,4 @@ image:
   tag: latest
 service:
   port: 8080
-#URL to self
-app:
-  selfURL: http://app-service:8080
+namespace: "app"

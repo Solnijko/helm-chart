@@ -4,6 +4,4 @@ image:
   tag: latest
 service:
   port: 5432 #PostgreSQL port, for example
-#URL to self
-data:
-  selfURL: http://data-service:5432
+namespace: "data"

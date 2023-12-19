@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: data-service
+  name: data-deployment
   labels:
     app: data
 spec:
@@ -17,7 +17,5 @@ spec:
       containers:
         - name: data
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-          args:
-            - --self-url={{ .Values.data.selfURL }}
           ports:
             - containerPort: {{ .Values.service.port }}

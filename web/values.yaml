@@ -9,6 +9,7 @@ ingress:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
   hosts:
-    - host: myapp.example.com
+    - host: test.local
       paths:
         - /
+namespace: "web"
