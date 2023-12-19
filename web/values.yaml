@@ -3,6 +3,7 @@ image:
   repository: nginx
   tag: latest
 service:
+  name: {{ .Values.service.name }}
   port: 80
 ingress:
   enabled: true
@@ -10,4 +11,4 @@ ingress:
     - host: test.local
       paths:
         - /
-namespace: "web"
+namespace: web
