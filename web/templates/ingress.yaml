@@ -2,18 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: web-ingress
-  labels: 
-    app: web
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  hosts: {{ .Values.ingress.hosts }}
+  ingressClassName: nginx
   rules:
-  - host: web.local
-    http:
+  - http:
       paths:
       - path: /
-        pathType: ImplementationSpecific
+        pathType: Prefix
         backend:
           service:
             name: {{ .Values.service.name }}
-            port: 
+            port:
               number: {{ .Values.service.port }}
