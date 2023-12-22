@@ -1,7 +1,6 @@
 replicaCount: 1
 image:
   repository: nginx
-  tag: latest
 service:
   port: 5432 #PostgreSQL port, for example
 namespace: "data"
