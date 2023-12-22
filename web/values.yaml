@@ -6,8 +6,4 @@ service:
   port: 80
 ingress:
   enabled: true
-  hosts:
-    - host: test.local
-      paths:
-        - /
 namespace: web
